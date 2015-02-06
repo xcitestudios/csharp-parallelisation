@@ -7,8 +7,8 @@
     <ProjectGuid>{1550C15A-0912-43BD-91AE-A54B13780C15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>com.xcitestudios.parallelisation</RootNamespace>
-    <AssemblyName>com.xcitestudios.parallelisation</AssemblyName>
+    <RootNamespace>com.xcitestudios.Parallelisation</RootNamespace>
+    <AssemblyName>com.xcitestudios.Parallelisation</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\com.xcitestudios.parallelisation.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\com.xcitestudios.Parallelisation.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,7 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\com.xcitestudios.parallelisation.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\com.xcitestudios.Parallelisation.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />

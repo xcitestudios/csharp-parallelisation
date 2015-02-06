@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("com.xcitestudios.parallelisation")]
+[assembly: AssemblyTitle("com.xcitestudios.Parallelisation")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xcitestudios.com")]
-[assembly: AssemblyProduct("com.xcitestudios.parallelisation")]
+[assembly: AssemblyProduct("com.xcitestudios.Parallelisation")]
 [assembly: AssemblyCopyright("Copyright © xcitestudios.com 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
