@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEvent.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEventHandler.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEventInput.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEventOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
