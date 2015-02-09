@@ -13,5 +13,10 @@
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright xcitestudios.com 2015</copyright>
     <tags>xcitestudios parallelisation events</tags>
+	<dependencies> 
+		<group>
+			<dependency id="com.xcitestudios.Generic" version="1.0.0-CI00000" />
+		</group>
+	</dependencies>
   </metadata>
 </package>

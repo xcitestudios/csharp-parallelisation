@@ -1,9 +1,11 @@
 ﻿namespace com.xcitestudios.Parallelisation.Interfaces
 {
+    using com.xcitestudios.Generic.Data.Manipulation.Interfaces;
+
     /// <summary>
     /// Generic output for any event
     /// </summary>
-    public interface IEventOutput
+    public interface IEventOutput : ISerialization
     {
         /// <summary>
         /// Did the event get handled correctly and can the data be trusted to be correct for the request.
@@ -15,18 +17,5 @@
         /// A general human readable response, useful for providing an error message if WasSuccessful returns false.
         /// </summary>
         string ResponseMessage { get; set; }
-
-        /// <summary>
-        /// Convert a JSON representation of this event output in to an actual IEventOutput object. Either
-        /// a generic "event output" type of a specific instance type.
-        /// </summary>
-        /// <param name="jsonString">Representation of this output</param>
-        void Deserialize(string jsonString);
-
-        /// <summary>
-        /// Convert this event output into JSON so it can be handled by anything that supports JSON.
-        /// </summary>
-        /// <returns>A representation of this output with minimally success and responseMessage e.g.: {"success": true, "responseMessage": ""}.</returns>
-        string Serialize();
     }
 }

@@ -1,23 +1,12 @@
 ﻿namespace com.xcitestudios.Parallelisation.Interfaces
 {
+    using com.xcitestudios.Generic.Data.Manipulation.Interfaces;
+
     /// <summary>
     /// An event which determines the type of event and the input and output data storage for that event.
     /// </summary>
-    public interface IEvent
+    public interface IEvent : ISerialization
     {
-        /// <summary>
-        /// Convert a JSON representation of this event in to an actual IEvent object. Either
-        /// a generic "event" type of a specific instance type.
-        /// </summary>
-        /// <param name="jsonString">Valid JSON representing this event, minimally: {"type": "", "input": {}, "output": {}}</param>
-        void Deserialize(string jsonString);
-
-        /// <summary>
-        /// Convert this event into JSON so it can be handled by anything that supports JSON.
-        /// </summary>
-        /// <returns>A representation of this event with minimally the type, input and output present, e.g.: {"type": "", "input": {}, "output": {}}</returns>
-        string Serialize();
-
         /// <summary>
         /// Return the type of this event, this is an identifier to determine how to react to it.
         /// 
