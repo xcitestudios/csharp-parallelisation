@@ -5,7 +5,9 @@
     /// <summary>
     /// An event which determines the type of event and the input and output data storage for that event.
     /// </summary>
-    public interface IEvent : ISerialization
+    public interface IEvent<T, U> : ISerialization
+        where T: IEventInput
+        where U: IEventOutput
     {
         /// <summary>
         /// Return the type of this event, this is an identifier to determine how to react to it.
@@ -19,11 +21,11 @@
         /// <summary>
         /// The input for this event that can be passed along with the event to handle it correctly.
         /// </summary>
-        IEventInput Input { get; set; }
+        T Input { get; set; }
 
         /// <summary>
         /// The output for this event after it has been handled. This should remain null until an output has been decided.
         /// </summary>
-        IEventOutput Output { get; set; }
+        U Output { get; set; }
     }
 }

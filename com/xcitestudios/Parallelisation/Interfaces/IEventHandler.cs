@@ -5,7 +5,9 @@
     /// or each type of event should have its own handler and implement this interface 
     /// only for the type of event it can handle.
     /// </summary>
-    public interface IEventHandler
+    public interface IEventHandler<T, U>
+        where T: IEventInput
+        where U: IEventOutput
     {
         /// <summary>
         /// Take the event and either check the type to handle it appropriately or strongly
@@ -15,6 +17,6 @@
         /// if the event is to be handled by multiple objects then it could have output set in those cases.
         /// </summary>
         /// <param name="e">The IEvent instance to handle.</param>
-        void Handle(IEvent e);
+        void Handle(IEvent<T, U> e);
     }
 }
