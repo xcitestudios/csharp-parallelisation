@@ -8,7 +8,7 @@ Interfaces designed to unify and simplify cross language and distributed functio
 From the start the packages are available on NuGet to make them easy to install in any project.
 
 ```sh
-$ Install-Package com.xcitestudios.Parallelisation -Pre
+$ Install-Package com.xcitestudios.Parallelisation
 ```
 
 Alternatively, just include the source files.
