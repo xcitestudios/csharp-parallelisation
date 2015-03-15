@@ -54,10 +54,16 @@
     <Reference Include="com.xcitestudios.Generic">
       <HintPath>packages\com.xcitestudios.Generic.1.0.1.0\lib\net40\com.xcitestudios.Generic.dll</HintPath>
     </Reference>
+    <Reference Include="com.xcitestudios.Network">
+      <HintPath>packages\com.xcitestudios.Network.1.0.11.0\lib\net40\com.xcitestudios.Network.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)'=='Release 4.5'">
     <Reference Include="com.xcitestudios.Generic">
       <HintPath>packages\com.xcitestudios.Generic.1.0.1.0\lib\net45\com.xcitestudios.Generic.dll</HintPath>
+    </Reference>
+    <Reference Include="com.xcitestudios.Network">
+      <HintPath>packages\com.xcitestudios.Network.1.0.11.0\lib\net45\com.xcitestudios.Network.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
