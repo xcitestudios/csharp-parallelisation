@@ -15,10 +15,15 @@
     <tags>xcitestudios parallelisation events</tags>
 	<dependencies>
 		<dependency id="com.xcitestudios.Generic" version="1.0" />
+		<dependency id="com.xcitestudios.Network" version="1.0" />
 	</dependencies>
   </metadata>
   <files>
-        <file src="bin\Release\net40\*" target="lib\net40" />
-        <file src="bin\Release\net45\*" target="lib\net45" />
+        <file src="bin\Release\net40\com.xcitestudios.Parallelisation.dll" target="lib\net40\com.xcitestudios.Parallelisation.dll" />
+        <file src="bin\Release\net40\com.xcitestudios.Parallelisation.pdb" target="lib\net40\com.xcitestudios.Parallelisation.pdb" />
+        <file src="bin\Release\net40\com.xcitestudios.Parallelisation.XML" target="lib\net40\com.xcitestudios.Parallelisation.XML" />
+        <file src="bin\Release\net45\com.xcitestudios.Parallelisation.dll" target="lib\net45\com.xcitestudios.Parallelisation.dll" />
+        <file src="bin\Release\net45\com.xcitestudios.Parallelisation.pdb" target="lib\net45\com.xcitestudios.Parallelisation.pdb" />
+        <file src="bin\Release\net45\com.xcitestudios.Parallelisation.XML" target="lib\net45\com.xcitestudios.Parallelisation.XML" />
   </files>
 </package>
