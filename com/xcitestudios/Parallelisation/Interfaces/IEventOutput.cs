@@ -1,6 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Interfaces
 {
-    using com.xcitestudios.Generic.Data.Manipulation.Interfaces;
+    using global::com.xcitestudios.Generic.Data.Manipulation.Interfaces;
 
     /// <summary>
     /// Generic output for any event

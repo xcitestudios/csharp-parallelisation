@@ -1,6 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Interfaces
 {
-    using com.xcitestudios.Generic.Data.Manipulation.Interfaces;
+    using global::com.xcitestudios.Generic.Data.Manipulation.Interfaces;
 
     /// <summary>
     /// An event which determines the type of event and the input and output data storage for that event.
