@@ -1,5 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
+    using global::com.xcitestudios.Parallelisation.Distributed.Interfaces;
     using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
@@ -15,7 +16,7 @@
     /// <typeparam name="T"><see cref="IRoutableEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
-    public class RPCEventWrapper<T, U, V>
+    public class RPCEventWrapper<T, U, V> : IEventTransmissionWrapper<T, U, V>
         where T : IRoutableEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
@@ -28,14 +29,14 @@
         /// <summary>
         /// Date/Time the event wash pushed in.
         /// </summary>
-        public DateTime PushedDatetime { get; set; }
+        public DateTime Datetime { get; set; }
 
         /// <summary>
         /// Total number of milliseconds since this event was pushed to AMQP.
         /// </summary>
         public long TotalMilliseconds {
             get {
-                return (long)DateTime.UtcNow.Subtract(PushedDatetime).TotalMilliseconds;
+                return (long)DateTime.UtcNow.Subtract(Datetime).TotalMilliseconds;
             }
         }
     }

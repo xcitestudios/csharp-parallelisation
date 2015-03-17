@@ -1,5 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
+    using global::com.xcitestudios.Parallelisation.Distributed.Interfaces;
     using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
@@ -35,7 +36,7 @@
         /// <summary>
         /// Stores events so they can be married up when a response comes back.
         /// </summary>
-        protected volatile Dictionary<string, RPCEventWrapper<T, U, V>> Events = new Dictionary<string, RPCEventWrapper<T, U, V>>();
+        protected volatile Dictionary<string, IEventTransmissionWrapper<T, U, V>> Events = new Dictionary<string, IEventTransmissionWrapper<T, U, V>>();
 
         /// <summary>
         /// Maximum time any job is allowed to run.
@@ -89,7 +90,7 @@
             var wrapper = new RPCEventWrapper<T, U, V>()
             {
                 Event = e,
-                PushedDatetime = DateTime.UtcNow
+                Datetime = DateTime.UtcNow
             };
 
             lock (Events)

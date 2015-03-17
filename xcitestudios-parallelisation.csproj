@@ -101,6 +101,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Interfaces\IEventTransmissionWrapper.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\BlockingRPCDispatcher.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\Interfaces\IRoutableEvent.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCEventWrapper.cs" />

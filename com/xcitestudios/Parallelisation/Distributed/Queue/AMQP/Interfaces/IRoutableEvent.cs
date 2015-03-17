@@ -16,7 +16,6 @@
         where V: IEventOutput
     {
         /// <summary>
-        /// 
         /// Exchange to publish to, characters are restricted to: a-zA-Z0-9-_.:
         /// </summary>
         string ExchangeName { get; set; }
