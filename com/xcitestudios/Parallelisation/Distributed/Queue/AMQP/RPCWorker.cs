@@ -12,7 +12,7 @@
     using System.Threading;
 
     /// <summary>
-    /// 
+    /// RPC worker implementation for AMQP.
     /// </summary>
     public class RPCWorker<T, U, V> : RPCBase, IEventHandler<T, U, V>
         where T : IRoutableEvent<U, V>
@@ -20,7 +20,7 @@
         where V : IEventOutput
     {
         /// <summary>
-        /// 
+        /// When to ACK, before or after working on the message.
         /// </summary>
         protected RPCWorkerAckTime AckTime { get; set; }
 

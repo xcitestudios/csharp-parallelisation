@@ -47,7 +47,7 @@ namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
         {
             Event = e;
             this.EventHandled += EventIncoming;
-            base.Handle(e);
+            base.Handle(Event);
 
             while (Event.Output == null)
             {
