@@ -103,6 +103,8 @@
   <ItemGroup>
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Interfaces\IEventTransmissionWrapper.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\BlockingRPCDispatcher.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\Interfaces\IRPCWorker.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\Interfaces\IRPCDispatcher.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCEventWrapper.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCDispatcher.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCEventReceived.cs" />
@@ -122,9 +124,7 @@
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

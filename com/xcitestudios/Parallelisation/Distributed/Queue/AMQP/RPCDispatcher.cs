@@ -1,5 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
+    using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Distributed.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
@@ -17,7 +18,7 @@
     /// <typeparam name="T"><see cref="IEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
-    public class RPCDispatcher<T, U, V> : RPCBase, IEventHandler<T, U, V>
+    public class RPCDispatcher<T, U, V> : RPCBase, IRPCDispatcher<T, U, V>
         where T : IEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
