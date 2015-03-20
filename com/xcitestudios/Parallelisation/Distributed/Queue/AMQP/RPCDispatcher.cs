@@ -1,7 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
     using global::com.xcitestudios.Parallelisation.Distributed.Interfaces;
-    using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
     using RabbitMQ.Client.Events;
@@ -15,18 +14,28 @@
     /// <summary>
     /// AMQP dispatcher for events with an RPC style response via AMQP.
     /// </summary>
-    /// <typeparam name="T"><see cref="IRoutableEvent{U,V}"/></typeparam>
+    /// <typeparam name="T"><see cref="IEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
     public class RPCDispatcher<T, U, V> : RPCBase, IEventHandler<T, U, V>
-        where T : IRoutableEvent<U, V>
+        where T : IEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
     {
         /// <summary>
-        /// Raised when a response is received for a known <see cref="IRoutableEvent{U,V}"/>.
+        /// Raised when a response is received for a known <see cref="IEvent{U,V}"/>.
         /// </summary>
         public event EventHandler EventHandled;
+
+        /// <summary>
+        /// Default routing key used for events.
+        /// </summary>
+        public string DefaultRoutingKey { get; set; }
+
+        /// <summary>
+        /// Default exchange used to send events to.
+        /// </summary>
+        public string DefaultExchange { get; set; }
 
         /// <summary>
         /// The channel used to send jobs out.
@@ -79,9 +88,34 @@
         /// <param name="e"></param>
         public void Handle(T e)
         {
+            Handle(e, null, null);
+        }
+
+        /// <summary>
+        /// Take the event and push it off to AMQP, storing a reference locally.
+        /// <seealso cref="IEventHandler{T,U,V}"/>.
+        /// </summary>
+        /// <param name="e"></param>
+        /// <param name="exchangeName">Exchange name used to push to, falls back to <see cref="DefaultExchange"/></param>
+        /// <param name="routingKey">Routing key to use for dispatch, falls back to <see cref="DefaultRoutingKey"/></param>
+        public void Handle(T e, string exchangeName = null, string routingKey = null)
+        {
             if (!Running)
             {
                 throw new Exception("RPC is not started");
+            }
+
+            exchangeName = exchangeName ?? DefaultExchange;
+            routingKey = routingKey ?? DefaultRoutingKey;
+
+            if (exchangeName == null)
+            {
+                throw new Exception("Exchange not specified, please specify or use DefaultExchange");
+            }
+
+            if (routingKey == null)
+            {
+                throw new Exception("Routing key not specified, please specify or use DefaultRoutingKey");
             }
 
             var body = Encoding.UTF8.GetBytes(e.SerializeJSON());
@@ -96,7 +130,7 @@
             lock (Events)
             {
                 Events[properties.CorrelationId] = wrapper;
-                OutgoingChannel.BasicPublish(e.ExchangeName, e.RoutingKey, properties, body);
+                OutgoingChannel.BasicPublish(exchangeName, routingKey, properties, body);
             }
         }
 

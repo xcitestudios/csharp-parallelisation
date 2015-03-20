@@ -1,6 +1,5 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
-    using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
     using RabbitMQ.Client.Events;

@@ -1,6 +1,5 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
-    using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
     using RabbitMQ.Client.Events;
@@ -15,7 +14,7 @@
     /// RPC worker implementation for AMQP.
     /// </summary>
     public class RPCWorker<T, U, V> : RPCBase, IEventHandler<T, U, V>
-        where T : IRoutableEvent<U, V>
+        where T : IEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
     {

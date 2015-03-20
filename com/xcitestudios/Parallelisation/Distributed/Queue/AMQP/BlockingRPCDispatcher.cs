@@ -1,23 +1,22 @@
-﻿using com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
-using com.xcitestudios.Parallelisation.Interfaces;
-using RabbitMQ.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
+﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
+    using com.xcitestudios.Parallelisation.Interfaces;
+    using RabbitMQ.Client;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading;
+
     /// <summary>
     /// AMQP dispatcher for events with an RPC style response via AMQP.
     /// Will stop code execution until a response is received.
     /// </summary>
-    /// <typeparam name="T"><see cref="IRoutableEvent{U,V}"/></typeparam>
+    /// <typeparam name="T"><see cref="IEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
     public class BlockingRPCDispatcher<T, U, V> : RPCDispatcher<T, U, V>
-        where T : IRoutableEvent<U, V>
+        where T : IEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
     {
@@ -43,7 +42,9 @@ namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
         /// <seealso cref="IEventHandler{T,U,V}"/>.
         /// </summary>
         /// <param name="e"></param>
-        public new void Handle(T e)
+        /// <param name="exchangeName">Exchange name used to push to, falls back to <see cref="P:RPCDispatcher.DefaultExchange"/></param>
+        /// <param name="routingKey">Routing key to use for dispatch, falls back to <see cref="P:RPCDispatcher.DefaultRoutingKey"/></param>
+        public new void Handle(T e, string exchangeName = null, string routingKey = null)
         {
             Event = e;
             this.EventHandled += EventIncoming;

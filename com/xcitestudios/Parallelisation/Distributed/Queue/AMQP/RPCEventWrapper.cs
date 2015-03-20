@@ -1,7 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP
 {
     using global::com.xcitestudios.Parallelisation.Distributed.Interfaces;
-    using global::com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces;
     using global::com.xcitestudios.Parallelisation.Interfaces;
     using RabbitMQ.Client;
     using RabbitMQ.Client.Events;
@@ -13,11 +12,11 @@
     /// <summary>
     /// Used for storing an RPC event along with local information.
     /// </summary>
-    /// <typeparam name="T"><see cref="IRoutableEvent{U,V}"/></typeparam>
+    /// <typeparam name="T"><see cref="IEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
     public class RPCEventWrapper<T, U, V> : IEventTransmissionWrapper<T, U, V>
-        where T : IRoutableEvent<U, V>
+        where T : IEvent<U, V>
         where U : IEventInput
         where V : IEventOutput
     {
