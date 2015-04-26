@@ -111,6 +111,13 @@
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCBase.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCWorker.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Distributed\Queue\AMQP\RPCWorkerAckTime.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJsonAbstract.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJsonFile.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJson\AMQP\CSVToJsonWorker.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJson\EventInput.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJson\EventOutput.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\CSVToJson\Event.cs" />
+    <Compile Include="com\xcitestudios\Parallelisation\Distributed\Utilities\Data\Conversion\Interfaces\ICSVToJson.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEvent.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEventHandler.cs" />
     <Compile Include="com\xcitestudios\Parallelisation\Interfaces\IEventInput.cs" />

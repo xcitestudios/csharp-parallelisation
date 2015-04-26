@@ -1,6 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces
 {
-    using com.xcitestudios.Parallelisation.Interfaces;
+    using global::com.xcitestudios.Parallelisation.Interfaces;
 
     /// <summary>
     /// AMQP dispatcher for events with an RPC style response via AMQP.

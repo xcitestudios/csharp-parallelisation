@@ -1,6 +1,6 @@
 ﻿namespace com.xcitestudios.Parallelisation.Distributed.Queue.AMQP.Interfaces
 {
-    using com.xcitestudios.Parallelisation.Interfaces;
+    using global::com.xcitestudios.Parallelisation.Interfaces;
 
     /// <summary>
     /// RPC worker implementation for AMQP.
