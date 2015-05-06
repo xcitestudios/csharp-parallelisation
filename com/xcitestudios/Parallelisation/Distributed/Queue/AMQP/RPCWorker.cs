@@ -14,6 +14,7 @@
     /// <summary>
     /// RPC worker implementation for AMQP.
     /// </summary>
+    [Serializable]
     public class RPCWorker<T, U, V> : RPCBase, IRPCWorker<T, U, V>
         where T : IEvent<U, V>
         where U : IEventInput

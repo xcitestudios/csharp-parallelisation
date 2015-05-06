@@ -15,6 +15,7 @@
     /// <typeparam name="T"><see cref="IEvent{U,V}"/></typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/></typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/></typeparam>
+    [Serializable]
     public class RPCEventWrapper<T, U, V> : IEventTransmissionWrapper<T, U, V>
         where T : IEvent<U, V>
         where U : IEventInput

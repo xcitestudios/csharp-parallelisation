@@ -9,6 +9,7 @@
     /// <typeparam name="T"><see cref="IEvent{U,V}"/>. The routable event.</typeparam>
     /// <typeparam name="U"><see cref="IEventInput"/>. Type of request.</typeparam>
     /// <typeparam name="V"><see cref="IEventOutput"/>. Type of response.</typeparam>
+    [Serializable]
     public class RPCEventReceived<T, U, V> : EventArgs
         where T : IEvent<U, V>
         where U : IEventInput
