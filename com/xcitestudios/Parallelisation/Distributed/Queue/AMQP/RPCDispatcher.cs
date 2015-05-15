@@ -161,8 +161,8 @@
                             e.Output = (V)Activator.CreateInstance(typeof(V));
                         }
 
-                        e.Output.WasSuccessful = false;
-                        e.Output.ResponseMessage = "No response received from RPC system";
+                        e.WasSuccessful = false;
+                        e.ResponseMessage = "No response received from RPC system";
 
                         EventHandled(this, new RPCEventReceived<T, U, V>(e));
                     }
