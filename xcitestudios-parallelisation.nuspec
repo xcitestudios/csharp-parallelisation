@@ -16,6 +16,7 @@
 	<dependencies>
 		<dependency id="com.xcitestudios.Generic" version="1.0" />
 		<dependency id="com.xcitestudios.Network" version="1.0" />
+    <dependency id="RabbitMQ.Client" version="3.5" />
 	</dependencies>
   </metadata>
   <files>
