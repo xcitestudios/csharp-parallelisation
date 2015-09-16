@@ -51,6 +51,12 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>com.xcitestudios.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release 4.0'">
     <Reference Include="com.xcitestudios.Generic">
       <HintPath>packages\com.xcitestudios.Generic.1.0.7.0\lib\net40\com.xcitestudios.Generic.dll</HintPath>
@@ -101,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="com.xcitestudios.snk" />
     <None Include="LICENSE" />
     <None Include="nuget.config" />
     <None Include="packages.config" />
